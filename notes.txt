@@ -1,0 +1,12 @@
+Providence, RI 
+
+Geo coords
+ lat = "39.49";
+ long = "86.18";
+    
+Zip Code = 029
+
+click button or some other methodto change from Fahrenheit to Celsius
+
+openweathermap.org/data/2.5/weather?zip=029,us&appid=(my api key)
+
