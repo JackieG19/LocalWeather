@@ -3,29 +3,45 @@
 <head>
 <title>Weather API</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 </head>
-<style>
-    body {
-        background-image: url("Providence.jpg");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center; 
-      }
-</style>
 <body>
     
-  <div class="container">
-    <div class="center">
-      <h1> Current Weather</h1>
-      <p id="city"></p>
-      <p id="weatherType"></p>
-      <p id="temp" onclick='changeTemp()'></p>
-      <p id="description"></p>
-    </div>      
-   </div> 
-
-
+ 
+    <div class="jumbotron" style="margin-bottom:0px; color=white; background-color=#4aa1f3;">
+      <h1 class="text-center" style="font-size: 50px">Local Weather</h1>
+      
+      <div class="container">
+        <div class="row" style="margin-bottom:20px;">
+          <h3 class="text-center text-primary">Enter City</h3>
+          <span id="error"></span>
+        </div>
+      </div>
+      
+      <div class="row form-group form-inline" id="rowDiv">
+         <input type="text" name="city" id="city" class="form-control" placeholder="City name">
+         <button id="submitWeather" class="btn btn-primary">Search</button>
+      </div>
+      
+      <div id="show">
+        <h2 id="city">Current Weather:</h2>
+        <h4 id="weather">Weather Today:</h4>
+        <h4 id="descript">Description:</h4>
+        <h4 id="temp">Temperature:</h4>
+        <h4 id="pressure">Pressure:</h4>
+        <h4 id="humidity">Humidity:</h4>
+        <h4 id="minTemp">Min. Temperature:</h4>
+        <h4 id="maxTemp">Max. Temperature:</h4>
+        <h4 id="speed">Speed:</h4>
+        <h4 id="direct">Direction:</h4>
+      </div>
+    </div>
+    <script src= "key.js"></script>
+    <script src= "script2.js"></script>
 </body>
-<script src= "script2.js"></script>
-<script src= "key.js"></script>
 </html>

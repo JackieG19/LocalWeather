@@ -10,3 +10,63 @@ click button or some other methodto change from Fahrenheit to Celsius
 
 openweathermap.org/data/2.5/weather?zip=029,us&appid=(my api key)
 
+Parameters:
+
+city:
+   city.id = City ID
+    city.name = City name
+    
+city.coord"
+  city.coord.lon = City geo location, longitude
+  city.coord.lat = City geo location, latitude
+  city.country = Country code (GB, JP etc.)
+
+city.sun:
+  city.sun.rise = Sunrise time
+  city.sun.set = Sunset time
+
+temperature:
+temperature.value = Temperature
+temperature.min = Minimum temperature at the moment of calculation. 
+     This is deviation from 'temp' that is possible for large cities and megalopolises 
+     geographically expanded (use these parameter optionally).
+temperature.max = Maximum temperature at the moment of calculation. 
+     This is deviation from 'temp' that is possible for large cities and megalopolises 
+     geographically expanded (use these parameter optionally).
+temperature.unit = Unit of measurements. Possilbe valure is Celsius, Kelvin, Fahrenheit.
+
+humidity:
+  humidity.value = Humidity value
+  humidity.unit = %
+
+pressure:
+  pressure.value = Pressure value
+  pressure.unit = hPa
+
+wind:
+  wind.speed
+  wind.speed.value = Wind speed, mps
+  wind.speed.name = Type of the wind
+
+wind.direction
+  wind.direction.value = Wind direction, degrees (meteorological)
+  wind.direction.code = Code of the wind direction. Possilbe value is WSW, N, S etc.
+  wind.direction.name = Full name of the wind direction.
+
+clouds:
+  clouds.value Cloudiness
+  clouds.name = Name of the cloudiness
+
+visibility:
+  visibility.value = Visibility, meter
+
+precipitation:
+  precipitation.value = Precipitation, mm
+  precipitation.mode = Possible values are 'no", name of weather phenomena as 'rain', 'snow'
+
+weather:
+  weather.number = Weather condition id
+  weather.value = Weather condition name
+  weather.icon = Weather icon id
+
+
