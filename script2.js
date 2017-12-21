@@ -1,34 +1,50 @@
-/*global $ APIKEY */
+/*global $ navigator */ /*global APIKEY*/
 
-var city = 'Providence';
-$(document).ready(function(){
-    console.log('hi');
-    $.ajax({
-               url: "https://api.openweathermap.org/data/2.5/weather?q=" + city 
-                + "&units=metric" + "&APPID=APIKEY",
-               method: "GET",
-               dataType: "jsonp",
-               success: function(data){
-                   console.log(data);
-                   //function show(data{
-                $('#city').text(data.name + "," + data.sys.country);
-                $('#weather').text(data.weather[0].main);
-                $('#temp').text(data.main.temp);
-                $('#description').text(data.weather[0].description);
-                $('#pressure').text(data.main.pressure);
-                $('#humidity').text(data.main.humidity);
-                $('#minTemp').text(data.main.temp_min);
-                $('#maxTemp').text(data.main.temp_max);
-                $('#speed').text(data.wind.speed);
-//}
-             }
-          });
-    $('#submitWeather').click(function(){
-     var city = $("#city").val();
-     console.log('click');
-      if(city != ''){
-          
-
-        } else $("#error").html('Enter City');
+$(document).ready(function() {
+   var location;
+    var lat;
+    var lon; 
+    var tempC;
+    var tempF;
+  console.log(location);
+  
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {      
+    lon = position.coords.longitude;
+    lat = position.coords.latitude;
+    console.log(navigator.geolocation);
+      
+    var myUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=' +
+                  lat + '&lon=' + lon + '&units=metric&appid=' + APIKEY;
+                  console.log(myUrl);
+      $.ajax({
+          url : myUrl,
+          method : 'GET',
+          success : function (data) {        
+            var temp = data.main.temp;
+            var location = data.name;                       
+            var imgSrc = data.weather[0].icon;
+            tempC = Math.round(temp);
+            tempF = Math.round((temp * 1.8) + 32);
+            console.log(temp);
+            
+            $('#pic').html("<img src=\"http://openweathermap.org/img/w/" + imgSrc + ".png\" width=\"80px\"></img><br>");
+            $('#message').html("<h4>" + tempC + 'C ' + location);
+          }                                                           
+      });            
+  });
+} else 
+    $('#message').html("<h4>No Location</h4>");
+    
+  // F <----> C //
+  $(document).ready(function() {          
+    $("#togBtn").on("click", function(){
+      
+      var weather = document.getElementById('message').innerHTML;     
+      if(weather.indexOf("C") > 0)                       
+        $('#message').html(weather.replace(tempC + "C", tempF + "F"));
+      else         
+        $('#message').html(weather.replace(tempF + "F", tempC + "C"));                 
     });
+  });
 });

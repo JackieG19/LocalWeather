@@ -1,46 +1,133 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Weather API</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <head>
+      <title>Weather API</title>
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-</head>
-<body>
+    </head>
+    <style>
+    body {
+      text-align: center;
+      color: white;
+      background: url("https://upload.wikimedia.org/wikipedia/commons/2/2c/Providence_RI_skyline2.jpg");
+    }
+    .switch {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    /*height: 34px;*/
+    height: 38px;
+    }
+
+    .switch input {display:none;}
+
+    .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  /*bottom: 0;*/
+  bottom: 3px;
+  background-color: #2196F3;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 14px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(49px);
+}
+
+.on
+{
+  display: none;
+}
+
+.on
+{
+  color: white;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  
+  font-size: 20px;
+  text-align: left;
+  font-family: Verdana, sans-serif;
+}
     
- 
-    <div class="jumbotron" style="margin-bottom:0px; color=white; background-color=#4aa1f3;">
-      <h1 class="text-center" style="font-size: 50px">Local Weather</h1>
-      
-      <div class="container">
-        <div class="row" style="margin-bottom:20px;">
-          <h3 class="text-center text-primary">Enter City</h3>
-          <span id="error"></span>
-        </div>
-      </div>
-      
-      <div class="row form-group form-inline" id="rowDiv">
-         <input type="text" name="city" id="city" class="form-control" placeholder="City name">
-         <button id="submitWeather" class="btn btn-primary">Search</button>
-      </div>
-      
-      <div id="show">
-        <h2 id="city">Current Weather:</h2>
-        <h4 id="weather">Weather Today:</h4>
-        <h4 id="descript">Description:</h4>
-        <h4 id="temp">Temperature:</h4>
-        <h4 id="pressure">Pressure:</h4>
-        <h4 id="humidity">Humidity:</h4>
-        <h4 id="minTemp">Min. Temperature:</h4>
-        <h4 id="maxTemp">Max. Temperature:</h4>
-        <h4 id="speed">Speed:</h4>
-      </div>
+  .off
+{
+  color: white;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  
+  
+  font-size: 20px;
+  font-family: Verdana, sans-serif;
+}
+
+input:checked+ .slider .on
+{display: block;}
+
+input:checked + .slider .off
+{display: none;}
+
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;}
+    </style>
+   <body style="padding-top:30px">
+  <h4>Local weather:</h4>
+  
+    <div id = "pic">
     </div>
-    <script src= "key.js"></script>
-    <script src= "script2.js"></script>
-</body>
+  
+    <div id = "message">
+    </div>
+ 
+  <label class="switch">
+      <input type="checkbox" id="togBtn">
+      <div class="slider round">
+          <span class="on">F</span>
+          <span class="off">C</span>
+      </div>
+    </label>
+  
+  </body>
+  <script type="text/javascript" src="key.js"></script>
+  <script type="text/javascript" src="script2.js"></script>
 </html>

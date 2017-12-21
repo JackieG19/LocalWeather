@@ -10,7 +10,7 @@ click button or some other methodto change from Fahrenheit to Celsius
 
 openweathermap.org/data/2.5/weather?zip=029,us&appid=(my api key)
 
-Parameters:
+JSON Parameters:
 
 city:
    city.id = City ID
