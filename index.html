@@ -4,121 +4,24 @@
       <title>Weather API</title>
  <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-
+<link rel="stylesheet" href="style.css" type="text/css" />
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 <!-- Popper JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     </head>
-    <style>
-    body {
-      text-align: center;
-      color: white;
-      background: url("https://upload.wikimedia.org/wikipedia/commons/2/2c/Providence_RI_skyline2.jpg");
-    }
-    .switch {
-    position: relative;
-    display: inline-block;
-    width: 100px;
-    /*height: 34px;*/
-    height: 38px;
-    }
-
-    .switch input {display:none;}
-
-    .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  /*bottom: 0;*/
-  bottom: 3px;
-  background-color: #2196F3;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 14px;
-  bottom: 4px;
-  background-color: white;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  transform: translateX(49px);
-}
-
-.on
-{
-  display: none;
-}
-
-.on
-{
-  color: white;
-  position: absolute;
-  transform: translate(-50%,-50%);
-  top: 50%;
-  left: 50%;
-  
-  font-size: 20px;
-  text-align: left;
-  font-family: Verdana, sans-serif;
-}
-    
-  .off
-{
-  color: white;
-  position: absolute;
-  transform: translate(-50%,-50%);
-  top: 50%;
-  left: 50%;
-  
-  
-  font-size: 20px;
-  font-family: Verdana, sans-serif;
-}
-
-input:checked+ .slider .on
-{display: block;}
-
-input:checked + .slider .off
-{display: none;}
-
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;}
-    </style>
    <body style="padding-top:30px">
-  <h4>Local weather:</h4>
-  
-    <div id = "pic">
-    </div>
-  
-    <div id = "message">
-    </div>
- 
+      <h4>Local weather:</h4>
+      <div class="display">
+        <div id = "icon">
+          <canvas id="icon1" width="128" height="128"></canvas>
+          <canvas id="icon2" width="128" height="128"></canvas>
+        </div>
+        <div id = "message"></div>
+        <div id = "windSpeed"></div>
+      </div>
   <label class="switch">
       <input type="checkbox" id="Btn">
       <div class="slider round">
