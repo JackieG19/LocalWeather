@@ -1,36 +1,28 @@
-<!DOCTYPE html>
-<html>
-    <head>
-      <title>Weather API</title>
- <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="style.css" type="text/css" />
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-    </head>
-   <body style="padding-top:30px">
-      <h4>Local weather:</h4>
-      <div class="display">
-        <div id = "icon">
-          <canvas id="icon1" width="128" height="128"></canvas>
-          <canvas id="icon2" width="128" height="128"></canvas>
+ <!DOCTYPE html>
+  <html>
+ <head>
+ <title>Weather API</title>
+  <!-- Latest compiled and minified CSS -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css" type="text/css" />
+ </head>
+  <body style="padding-top:30px">
+   <h4>Local weather:</h4>
+     <div id = "pic"></div> 
+     <div id = "message"></div>
+      <label class="switch">
+       <input type="checkbox" id="togBtn">
+       <div class="slider round">
+           <span class="on">F</span>
+           <span class="off">C</span>
         </div>
-        <div id = "message"></div>
-        <div id = "windSpeed"></div>
-      </div>
-  <label class="switch">
-      <input type="checkbox" id="Btn">
-      <div class="slider round">
-          <span class="on">F</span>
-          <span class="off">C</span>
-      </div>
-    </label>
-  
-  </body>
-  <script type="text/javascript" src="key.js"></script>
-  <script type="text/javascript" src="script2.js"></script>
-</html>
+        </label>  
+   <script type="text/javascript" src="key.js"></script>
+   <script type="text/javascript" src="script2.js"></script>
+  </html>
